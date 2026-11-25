@@ -20,7 +20,7 @@ export function About() {
               </Artwork>
             </div>
             <p className="mt-4 text-sm text-ink-soft">
-              {profile.role}, Cure Forever. {profile.location}.
+              {profile.role}, CUREFOREVER. {profile.location}.
             </p>
           </div>
         </div>

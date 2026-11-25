@@ -190,52 +190,89 @@ export const posts: WorkItem[] = [
   ),
 ]
 
-/** Gallery filters. Every piece of work above belongs to exactly one topic. */
-export const galleryTopics = ['Gut health', 'Women’s health', 'Heart & nutrition', 'Awareness', 'Product'] as const
-export type GalleryTopic = (typeof galleryTopics)[number]
+/** Gallery filter tabs, in display order. "all" shows everything. */
+export const galleryFilters = [
+  { id: 'all', label: 'All' },
+  { id: 'post', label: 'Posts' },
+  { id: 'reel', label: 'Reels' },
+  { id: 'carousel', label: 'Carousels' },
+  { id: 'ad', label: 'Ad creatives' },
+  { id: 'product', label: 'Product imagery' },
+  { id: 'campaign', label: 'Campaigns' },
+  { id: 'ecommerce', label: 'E-commerce' },
+] as const
 
-const topicOf: Record<string, GalleryTopic> = {
-  movember: 'Awareness',
-  'whey-campaign': 'Product',
-  sarcopenia: 'Women’s health',
-  'burning-feet': 'Awareness',
-  bloating: 'Gut health',
-  triglycerides: 'Heart & nutrition',
-  'gut-brain': 'Gut health',
-  astaxanthin: 'Awareness',
-  'collagen-vitamin-c': 'Product',
-  'festive-fiber': 'Gut health',
-  'food-for-organs': 'Heart & nutrition',
-  'supplement-cheat-sheet': 'Heart & nutrition',
-  'menopause-habits': 'Women’s health',
-  'gut-second-brain': 'Gut health',
-  'whey-latte': 'Product',
-  'marine-collagen': 'Product',
-  'omega-3-duo': 'Product',
-  'trans-resveratrol': 'Product',
-  berberine: 'Product',
+export type GalleryFilterId = (typeof galleryFilters)[number]['id']
+export type GalleryType = Exclude<GalleryFilterId, 'all'>
+
+/** Which tabs each piece of work shows under. A piece can sit in several. */
+const typesOf: Record<string, GalleryType[]> = {
+  movember: ['carousel', 'campaign'],
+  'whey-campaign': ['carousel', 'campaign', 'product'],
+  sarcopenia: ['carousel'],
+  'burning-feet': ['carousel'],
+  bloating: ['carousel'],
+  triglycerides: ['carousel'],
+  'gut-brain': ['carousel'],
+  astaxanthin: ['carousel'],
+  'collagen-vitamin-c': ['carousel'],
+  'festive-fiber': ['carousel', 'campaign'],
+  'food-for-organs': ['carousel'],
+  'supplement-cheat-sheet': ['post'],
+  'menopause-habits': ['post'],
+  'gut-second-brain': ['post'],
+  'whey-latte': ['post', 'product'],
+  'marine-collagen': ['post', 'product'],
+  'omega-3-duo': ['post', 'product'],
+  'trans-resveratrol': ['post', 'product'],
+  berberine: ['post', 'ad', 'product'],
 }
 
 export interface GallerySlide extends Slide {
   id: string
-  topic: GalleryTopic
+  types: GalleryType[]
   /** Shown in the lightbox, e.g. "Bloated all the time?, slide 2 of 5". */
   label: string
+  /** Tile shape as "width / height". Defaults to "4 / 5". Reels use "9 / 16". */
+  ratio?: string
+  /** Optional .mp4 path. The lightbox plays it; the tile shows `src` as the cover. */
+  video?: string
 }
+
+/**
+ * Add reels, ads, e-commerce images and other extra work here.
+ * Put files in /public/work/extra/ and reference them like this:
+ *
+ *   {
+ *     id: 'reel-gut-tips',
+ *     types: ['reel'],
+ *     label: 'Gut health tips reel',
+ *     src: '/work/extra/reel-gut-tips-cover.webp',   // cover image
+ *     srcSm: '/work/extra/reel-gut-tips-cover.webp', // same file is fine
+ *     alt: 'Reel cover showing ...',
+ *     ratio: '9 / 16',
+ *     video: '/work/extra/reel-gut-tips.mp4',          // optional
+ *   },
+ *
+ * Extra items show first in the gallery.
+ */
+export const extraGallery: GallerySlide[] = []
 
 /**
  * Every slide of every piece. Inner slides come first, dealt round-robin across
  * carousels so neighbours differ; covers and posts (already shown in Work) follow.
  */
-export const gallerySlides: GallerySlide[] = [...carousels, ...posts]
+const workSlides: GallerySlide[] = [...carousels, ...posts]
   .flatMap((item, order) =>
     item.slides.map((slide, i) => ({
       ...slide,
       id: `${item.id}-${i + 1}`,
-      topic: topicOf[item.id] ?? 'Product',
+      types: typesOf[item.id] ?? (item.format === 'Carousel' ? ['carousel'] : ['post']),
       label: item.slides.length > 1 ? `${item.title}, slide ${i + 1} of ${item.slides.length}` : item.title,
       rank: [i === 0 ? 1 : 0, i, order],
     })),
   )
   .sort((a, b) => a.rank[0] - b.rank[0] || a.rank[1] - b.rank[1] || a.rank[2] - b.rank[2])
   .map(({ rank: _rank, ...slide }) => slide)
+
+export const gallerySlides: GallerySlide[] = [...extraGallery, ...workSlides]

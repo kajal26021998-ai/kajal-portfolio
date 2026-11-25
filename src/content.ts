@@ -32,8 +32,8 @@ export const profile = {
 
 export const hero = {
   greeting: 'Hello,',
-  role: 'Head of Content, Healthcare & Wellness',
-  lead: 'I turn health and wellness stories into meaningful brand experiences, across social, web and e-commerce.',
+  role: 'HEAD OF CONTENT (Content Strategy | Brand Strategy | Content Marketing | Social Media)',
+  lead: 'I build content strategies and shape brand narratives that connect businesses with people, turning ideas into impactful content and meaningful brand experiences across digital platforms.',
   stats: [
     { value: '4+', label: 'Years in content\nand marketing' },
     { value: '6', label: 'Areas of\nexpertise' },
@@ -47,7 +47,7 @@ export const pillTints = ['#E4DDF3', '#F1D9CB', '#DCE6D2', '#F3E8BF', '#D7E5EC',
 
 export const craft = {
   intro:
-    'I started out writing social posts and now lead content for a wellness brand. Across every role, the common thread is simple. I make',
+    'I started with creative writing and social media content, and today I lead content and branding, turning ideas into impactful brand communication.',
   word: 'CONTENT',
   pills: [
     'Healthcare Content',
@@ -58,16 +58,18 @@ export const craft = {
     'Ad Creatives',
     'SEO',
   ],
-  listTitle: 'What I create',
+  listTitle: 'What I bring to the table',
   list: [
-    'Social media content',
-    'Reels, carousels and statics',
-    'Website copy',
-    'Product descriptions',
-    'Amazon listings and A+ Content',
-    'Static and video ad concepts',
-    'Influencer campaigns',
-    'SEO content',
+    'What I Bring to the Table',
+    'Content Strategy & Social Media',
+    'Creative Content & Storytelling',
+    'Brand Strategy & Product Positioning',
+    'Website & E-commerce Content',
+    'Campaigns & Performance Ad Creatives',
+    'Influencer & UGC Marketing',
+    'Creative Direction & Content Production',
+    'SEO & Blog Content',
+    'Amazon Listings & A+ Content',
   ],
   body: [
     'Content that explains the science behind a product without losing the reader, and campaigns that keep the same voice from Instagram to the Amazon listing.',
@@ -86,36 +88,48 @@ export const navItems = [
 
 export const about = {
   statement:
-    'I turn product science, ingredients and health benefits into content people understand and trust.',
+    'A Little about what I do',
   paragraphs: [
-    'I am a Head of Content with over four years of experience in content strategy, branding and digital marketing. I currently lead content for Cure Forever, a health and wellness consumer brand based in Hyderabad.',
-    'My work sits where science meets storytelling. I take product features, ingredients and science-backed information and shape them into clear, accurate communication for social media, websites and e-commerce marketplaces.',
-    'I plan and run content end to end, from calendars and campaign concepts to creator partnerships and performance creatives, working with internal teams and external creators to keep every touchpoint on brand.',
+    'I’m a Head of Content with over five years of experience in content strategy, brand building and digital marketing. I currently lead content for CUREFOREVER, a health and wellness brand based in Hyderabad.',
+
+    'My work sits at the intersection of strategy and storytelling. I take product features, ingredients and science-backed information and turn them into clear, engaging and accurate brand communication across social media, websites and e-commerce platforms.',
+
+    'I manage content end to end, from ideation, content calendars and campaign concepts to creative partnerships and performance marketing creatives. I also work closely with internal teams, designers and external creators to ensure consistency in brand messaging and communication across every touchpoint.',
+
+    'Beyond creating content, I focus on building brand narratives, strengthening digital presence and creating communication that connects with audiences while supporting business goals.',
   ],
   approach: [
     {
-      title: 'Content strategy',
-      text: 'Calendars, channel plans and campaigns built around what the audience needs to know next.',
+      title: 'Content Strategy & Planning',
+      text: 'Building content calendars, channel plans and campaigns around audience needs and brand goals.',
     },
     {
-      title: 'Brand storytelling',
-      text: 'One consistent voice across Instagram, the website and marketplace listings.',
+      title: 'Brand Strategy & Product Positioning',
+      text: 'Creating clear brand narratives, defining product USPs and communicating what makes a brand stand out.',
     },
     {
-      title: 'Healthcare communication',
-      text: 'Accurate, science-backed information written in language people can follow.',
+      title: 'Brand Voice & Communication',
+      text: 'Maintaining a consistent brand voice across social media, websites and e-commerce marketplaces.',
     },
     {
-      title: 'Creative marketing',
-      text: 'Concepts for static and video ads, product launches, festive campaigns and offers.',
+      title: 'Creative Content & Storytellingg',
+      text: 'Turning ideas into engaging reels, carousels, static creatives and stories that connect with audiences.',
     },
     {
-      title: 'Consumer education',
-      text: 'Explaining ingredients and benefits so people can make informed choices.',
+      title: 'Product & Consumer Education',
+      text: 'Simplifying complex ingredients, product features and benefits into clear, accurate and easy-to-understand communication.',
     },
     {
-      title: 'Audience engagement',
-      text: 'Community management, creator partnerships and reporting that shapes the next plan.',
+      title: 'Campaigns & Performance Marketing',
+      text: 'Developing creative concepts for static and video ads, product launches, festive campaigns and promotional offers.',
+    },
+    {
+      title: 'Influencer & Creator Collaborations',
+      text: 'Planning creator campaigns, developing content briefs and coordinating collaborations from ideation to execution.',
+    },
+    {
+      title: 'Digital & E-commerce Content',
+      text: 'Creating website copy, SEO content, product descriptions, Amazon listings and A+ Content that inform and engage consumers.',
     },
   ],
 }
@@ -123,44 +137,55 @@ export const about = {
 export const expertise = [
   {
     title: 'Content Strategy',
-    summary: 'Deciding what to say, where to say it and when, for a health-conscious audience.',
+    summary: 'Building content frameworks that align brand goals, audience interests and communication.',
     skills: [
-      'Healthcare & Wellness Content Strategy',
-      'Content Planning',
-      'Content Calendars',
+      'Content Planning & Calendars',
       'Brand Communication',
+      'Content Development',
+      'Campaign Strategy',
     ],
   },
   {
     title: 'Digital & Social Media',
-    summary: 'Running day-to-day social operations, from publishing to community and reporting.',
-    skills: ['Social Media Management', 'Instagram Content', 'Community Management', 'Social Media Analytics'],
+    summary: 'Managing digital presence and day-to-day social operations, from publishing to community engagement and performance tracking.',
+    skills: ['Social Media Management', 'Instagram Content Strategy', 'Community Management', 'Social Media Analytics'],
   },
   {
-    title: 'Creative & Performance',
-    summary: 'Concepts and creative direction for paid campaigns, promotions and sales events.',
+    title: 'Creative & Performance Marketing',
+    summary: 'Developing creative concepts and direction for paid campaigns, promotions and sales initiatives.',
     skills: ['Static Ad Creatives', 'Video Ad Concepts', 'Creative Direction', 'Campaign Execution'],
   },
   {
+    title: 'Brand Strategy & Positioning',
+    summary: 'Building distinctive brand identities and communicating product value through clear, consistent messaging.',
+    skills: ['Brand Positioning', 'Product Positioning', 'Brand Voice & Tone', 'USP & Value Proposition Development'],
+  },
+  {
     title: 'E-commerce Content',
-    summary: 'Product pages and marketplace content that inform shoppers and support conversions.',
-    skills: ['Amazon Listings', 'A+ Content', 'Product Descriptions', 'Website Copywriting'],
+    summary: 'Creating product-focused content that communicates value, builds trust and supports purchase decisions.',
+    skills: ['Website Copywriting', 'Product Descriptions', 'Amazon Listings', 'Amazon A+ Content'],
+  },
+
+  {
+    title: 'Influencer & UGC Marketing',
+    summary: 'Planning creator collaborations and developing content that builds brand awareness and audience trust.',
+    skills: ['Influencer Campaign Planning', 'Creator Outreach & Coordination', 'UGC Content Briefs', 'Influencer Content Direction'],
   },
   {
-    title: 'Influencer Marketing',
-    summary: 'Finding the right creators for the brand and managing collaborations end to end.',
-    skills: ['Creator Discovery', 'Influencer Outreach', 'Negotiations', 'Campaign Coordination'],
+    title: 'SEO & Content Optimisation',
+    summary: 'Creating search-focused content that improves discoverability and strengthens organic digital presence.',
+    skills: ['SEO Content Writing', 'Blog & Article Development', 'Keyword Integration', 'On-page Content Optimisation'],
   },
   {
-    title: 'SEO & Optimization',
-    summary: 'Making content easier to find and improving it based on how it performs.',
-    skills: ['SEO Content', 'Content Optimization', 'Performance Analysis'],
+    title: 'Creative Production & Storytelling',
+    summary: 'Taking creative ideas from concept to execution while maintaining visual and messaging consistency.',
+    skills: ['Reel & Video Concepts', 'Carousel & Static Content', 'Scriptwriting & Copywriting', 'Shoot Planning & Coordination'],
   },
 ]
 
 export const experience = [
   {
-    company: 'Cure Forever',
+    company: 'CUREFOREVER',
     role: 'Head of Content',
     location: 'Hyderabad',
     period: 'Aug 2024 - Present',
