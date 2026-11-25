@@ -10,13 +10,16 @@ import { go, ResumeLink } from './Nav'
  * over her dark top, never on the face. Below lg they flow as a row instead.
  */
 const pillSpots: CSSProperties[] = [
-  { top: '20%', left: '-20%' },
+  { top: '20%', left: '-15%' },
   { top: '35%', left: '-9%' },
-  { top: '50%', left: '-22%' },
+  { top: '50%', left: '-14%' },
   { bottom: '10%', right: '5%' },
   { bottom: '23%', right: '3%' },
+  { top: '65%', left: '-12%' },
 ]
-const pillTilt = [-7, 5, 4, -5, 6]
+const pillTilt = [-7, 5, 4, -5, 6, -4]
+const [firstName, ...rest] = profile.name.split(' ')
+const lastName = rest.join(' ')
 
 export function Hero() {
   const root = useRef<HTMLElement>(null)
@@ -43,23 +46,23 @@ export function Hero() {
       <div className="hero-card frame relative mx-auto grid min-h-[calc(100dvh-96px)] max-w-[1400px] grid-cols-1 overflow-hidden rounded-[28px] border border-ink/8 bg-paper lg:grid-cols-12">
         <div className="relative z-10 flex flex-col justify-between gap-12 px-6 pt-10 pb-8 sm:px-10 lg:col-span-7 lg:py-14 lg:pl-14">
           <div>
-            <p className="hero-fade flex items-center gap-3 text-[0.8125rem] font-bold tracking-[0.06em] text-clay-deep uppercase">
-              <span className="h-px w-8 bg-clay" aria-hidden="true" />
-              {hero.role}
-            </p>
-            <h1 className="mt-8">
-              <span className="block overflow-hidden pb-[0.04em]">
-                <span className="hero-line display block text-[clamp(4.2rem,10.5vw,10rem)] leading-[0.88] font-extrabold tracking-[-0.06em]">
-                  {hero.greeting}
+            <h1>
+              <span className="block overflow-hidden pb-[0.06em]">
+                <span className="hero-line display block text-[clamp(1.6rem,2.6vw,2.4rem)] leading-tight text-ink-soft">
+                  {hero.greeting} I'm
                 </span>
               </span>
-              <span className="block overflow-hidden pb-[0.08em]">
-                <span className="hero-line display block text-[clamp(2.1rem,4.4vw,4.2rem)] leading-[1.05]">
-                  I'm <em className="text-clay-deep">{profile.name}</em>
+              <span className="block overflow-hidden pb-[0.1em]">
+                <span className="hero-line display block text-[clamp(3rem,6.2vw,5.75rem)] leading-[0.98] font-extrabold tracking-[-0.05em]">
+                  {firstName} <em className="text-clay-deep">{lastName}</em>
                 </span>
               </span>
             </h1>
-            <p className="hero-fade mt-7 max-w-[30rem] text-[1.0625rem] leading-relaxed text-ink-soft md:text-lg">
+            <p className="hero-fade mt-7 flex max-w-[36rem] items-start gap-3 text-[0.8125rem] leading-relaxed font-bold tracking-[0.06em] text-clay-deep uppercase">
+              <span className="mt-[0.6em] h-px w-8 shrink-0 bg-clay" aria-hidden="true" />
+              {hero.role}
+            </p>
+            <p className="hero-fade mt-6 max-w-[30rem] lg:max-w-[25rem] xl:max-w-[30rem] text-[1.0625rem] leading-relaxed text-ink-soft md:text-lg">
               {hero.lead}
             </p>
             <div className="hero-fade mt-9 flex flex-wrap gap-3">
@@ -85,7 +88,7 @@ export function Hero() {
           </dl>
         </div>
 
-        <div className="relative min-h-[540px] sm:min-h-[640px] lg:col-span-5 lg:min-h-0">
+        <div className="relative min-h-[600px] sm:min-h-[680px] lg:col-span-5 lg:min-h-0">
           <div
             aria-hidden="true"
             className="hero-disc absolute bottom-[4%] left-1/2 aspect-square w-[min(88%,520px)] -translate-x-1/2 rounded-full bg-gradient-to-b from-sand to-[#ead9c6]"
@@ -94,10 +97,10 @@ export function Hero() {
             src={profile.portrait.src}
             alt={profile.portrait.alt}
             width={900}
-            height={1015}
+            height={1194}
             fetchPriority="high"
             decoding="async"
-            className="hero-photo absolute bottom-0 left-1/2 h-[76%] w-auto sm:h-[82%] lg:h-[96%] max-w-none -translate-x-1/2 object-contain object-bottom"
+            className="hero-photo absolute bottom-0 left-1/2 h-[72%] w-auto sm:h-[80%] lg:h-[88%] max-w-none -translate-x-1/2 object-contain object-bottom [mask-image:linear-gradient(to_right,transparent,black_16%)]"
           />
           <ul
             aria-label="Focus areas"

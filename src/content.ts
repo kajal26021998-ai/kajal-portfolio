@@ -26,7 +26,7 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/kajal-sharma-b485222b6/',
   // Note: the resume PDF includes a phone number and home address.
   resume: '/Kajal-Sharma-Resume.pdf',
-  portrait: { src: '/images/kajal-sharma.webp', alt: 'Portrait of Kajal Sharma' } as ImageSlot,
+  portrait: { src: '/images/kajal-sharma-hero.webp', alt: 'Portrait of Kajal Sharma' } as ImageSlot,
   aboutImage: { src: '/images/kajal-sharma.webp', alt: 'Kajal Sharma' } as ImageSlot,
 }
 
@@ -39,7 +39,7 @@ export const hero = {
     { value: '6', label: 'Areas of\nexpertise' },
     { value: '9.4', label: 'CGPA,\nBBA' },
   ],
-  pills: ['Content Strategy', 'Amazon A+', 'Social Media', 'Influencer Marketing', 'SEO'],
+  pills: ['Content Strategy', 'Branding', 'Social Media', 'Campaigns', 'Influencer Marketing', 'SEO & Creative Direction'],
 }
 
 /** Pastel tints for floating skill pills. */
@@ -50,13 +50,13 @@ export const craft = {
     'I started with creative writing and social media content, and today I lead content and branding, turning ideas into impactful brand communication.',
   word: 'CONTENT',
   pills: [
-    'Healthcare Content',
-    'Copywriting',
+    'Content Writing & Strategy',
+    'Branding',
     'Reels & Carousels',
-    'Amazon A+',
+    'Social Media',
     'Influencer Campaigns',
     'Ad Creatives',
-    'SEO',
+    'SEO & Blog Content',
   ],
   listTitle: 'What I bring to the table',
   list: [
