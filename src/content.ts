@@ -19,7 +19,7 @@ export const profile = {
   name: 'Kajal Sharma',
   role: 'Head of Content',
   focus: 'Healthcare & Wellness Content Marketing',
-  experience: '4+ years',
+  experience: '5+ years',
   location: 'Hyderabad, India',
   email: 'kajal26021998@gmail.com',
   // Empty URL = shown as "Link coming soon".
@@ -35,7 +35,7 @@ export const hero = {
   role: 'HEAD OF CONTENT (Content Strategy | Brand Strategy | Content Marketing | Social Media)',
   lead: 'I build content strategies and shape brand narratives that connect businesses with people, turning ideas into impactful content and meaningful brand experiences across digital platforms.',
   stats: [
-    { value: '4+', label: 'Years in content\nand marketing' },
+    { value: '5+', label: 'Years in content\nand marketing' },
     { value: '6', label: 'Areas of\nexpertise' },
     { value: '9.4', label: 'CGPA,\nBBA' },
   ],

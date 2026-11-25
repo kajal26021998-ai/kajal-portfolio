@@ -21,6 +21,16 @@ const pillTilt = [-7, 5, 4, -5, 6, -4]
 const [firstName, ...rest] = profile.name.split(' ')
 const lastName = rest.join(' ')
 
+/** "Head of Content (A | B | C)" -> title "Head of Content", areas [A, B, C]. */
+const roleMatch = hero.role.match(/^([^(]+)\((.*)\)\s*$/)
+const roleTitle = (roleMatch ? roleMatch[1] : hero.role).trim()
+const roleAreas = roleMatch
+  ? roleMatch[2]
+      .split('|')
+      .map((s) => s.trim())
+      .filter(Boolean)
+  : []
+
 export function Hero() {
   const root = useRef<HTMLElement>(null)
 
@@ -58,10 +68,21 @@ export function Hero() {
                 </span>
               </span>
             </h1>
-            <p className="hero-fade mt-7 flex max-w-[36rem] items-start gap-3 text-[0.8125rem] leading-relaxed font-bold tracking-[0.06em] text-clay-deep uppercase">
-              <span className="mt-[0.6em] h-px w-8 shrink-0 bg-clay" aria-hidden="true" />
-              {hero.role}
-            </p>
+            <div className="hero-fade mt-8 max-w-[36rem]">
+              <p className="inline-block text-[clamp(1.35rem,2vw,1.75rem)] leading-tight font-extrabold tracking-[0.01em] text-ink uppercase [background:linear-gradient(transparent_62%,color-mix(in_oklab,var(--color-clay)_28%,transparent)_62%)]">
+                {roleTitle}
+              </p>
+              {roleAreas.length > 0 && (
+                <ul className="mt-3.5 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[0.9375rem] font-semibold text-clay-deep">
+                  {roleAreas.map((area, i) => (
+                    <li key={area} className="flex items-center gap-3">
+                      {i > 0 && <span className="h-1 w-1 rounded-full bg-clay/60" aria-hidden="true" />}
+                      {area}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
             <p className="hero-fade mt-6 max-w-[30rem] lg:max-w-[25rem] xl:max-w-[30rem] text-[1.0625rem] leading-relaxed text-ink-soft md:text-lg">
               {hero.lead}
             </p>
