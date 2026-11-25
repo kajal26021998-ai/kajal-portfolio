@@ -1,0 +1,14 @@
+node_modules
+dist
+*.tsbuildinfo
+.vercel
+
+# Local tooling
+.claude
+.playwright-mcp
+ruvector.db
+
+# Source design files (large). Web-ready copies live in public/
+kajal - works/
+hero_image-01.png
+KAJAL SHARMA RESUME.pdf
